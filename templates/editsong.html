@@ -1,0 +1,65 @@
+{% extends 'index.html' %}
+{% block body %}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#  <title>Edit Song</title>#}
+{#  <!-- Bootstrap CSS -->#}
+{#  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">#}
+{##}
+{#  <style>#}
+{#    body {#}
+{#      background-color: #f4f4f9;#}
+{#      font-family: Arial, sans-serif;#}
+{#    }#}
+{#    .container {#}
+{#      max-width: 500px;#}
+{#      margin-top: 50px;#}
+{#    }#}
+{#    .form-label {#}
+{#      font-weight: bold;#}
+{#    }#}
+{#    h2 {#}
+{#      text-transform: uppercase;#}
+{#      color: #333;#}
+{#    }#}
+{#    .form-control.song-name {#}
+{#      border: 2px solid #8a2be2; /* Violet border for Song Name input */#}
+{#    }#}
+{#    .btn-custom {#}
+{#      background-color: #8a2be2; /* Violet background for button */#}
+{#      color: white;#}
+{#      width: 100%;#}
+{#    }#}
+{#    .btn-custom:hover {#}
+{#      background-color: #6a0dad; /* Darker violet on hover */#}
+{#    }#}
+{#  </style>#}
+{#</head>#}
+
+<body>
+  <div class="container">
+    <h2 class="text-center">Edit Song</h2>
+    <form action="/editsongpost" method="post" enctype="multipart/form-data" id="form1">
+      <div class="form-group">
+        <label for="songName" class="form-label">Song Name</label>
+        <input type="text" class="form-control song-name" id="songName" name="textfield" value="{{ data.songname }}" required />
+      </div>
+      <div class="form-group">
+        <label for="songFile" class="form-label">Song File</label>
+        <input type="file" class="form-control-file" id="songFile" name="file" value="{{ data.file }}" />
+      </div>
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-custom">Edit Song</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+{#</html>#}
+{% endblock %}
